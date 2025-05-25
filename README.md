@@ -1,3 +1,3 @@
 # pwm_coolpad
 
-![banner](.schematic.png "banner")
+![banner](schematic.png "banner")
