@@ -1,6 +1,6 @@
 # PWM_coolpad
 
-![banner](schematic.bmp "banner")
+![banner](schematic.png "banner")
 
 ## Procedure
 1. Get cpu temperature from LibreHardwareMonitor.exe
