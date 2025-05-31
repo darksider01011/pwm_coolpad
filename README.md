@@ -4,8 +4,10 @@
 
 ## Procedure
 1. Get cpu temperature from LibreHardwareMonitor
-2. If temperature is less than 50 pwm is set 1
-3. If temperature is biger than 50 pwm is set 80
+2. If cpu temperature more than 50c pwm signal is set to 5
+3. If cpu temperature more than 60c pwm signal is set to 140
+4. If cpu temperature more than 70c pwm signal is set to 245
+5. Print cpu temperature
 
 
 ## Resource
