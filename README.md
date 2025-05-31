@@ -3,7 +3,7 @@
 ![banner](schematic.bmp "banner")
 
 ## Procedure
-1. Get cpu temperature from LibreHardwareMonitor
+1. Get cpu temperature from LibreHardwareMonitor.exe
 2. If cpu temperature more than 50c pwm signal is set to 5 (Green Led is on)
 3. If cpu temperature more than 60c pwm signal is set to 140 (Yellow Led is on)
 4. If cpu temperature more than 70c pwm signal is set to 245 (Red Led is on)
