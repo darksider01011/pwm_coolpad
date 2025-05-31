@@ -10,5 +10,7 @@
 
 ## Resource
 https://github.com/LibreHardwareMonitor/LibreHardwareMonitor
+
 https://randomnerdtutorials.com/esp8266-pwm-arduino-ide/
+
 https://github.com/stefanthoss/esp8266-fan-control
