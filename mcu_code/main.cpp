@@ -23,8 +23,6 @@ void setup() {
   analogWrite(red, 0);
   analogWrite(green, 0);
 
-
-  
   // 5 pulse
   server.on("/5", HTTP_GET, []() {
     server.send(200, "text/html", getHTML());
@@ -54,18 +52,15 @@ void setup() {
     analogWrite(red, 200);
     Serial.println("50_pulse");
   });
-
-
-
+  
   // Start the server
   server.begin();
 }
 
-  String getHTML() {
+String getHTML() {
   String ptr = "<!DOCTYPE html> <html>\n";
   return ptr;
-  }
-
+}
 
 void loop() {
     server.handleClient();
