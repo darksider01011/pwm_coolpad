@@ -17,86 +17,55 @@ void setup() {
   Serial.begin(9600);
   analogWriteFreq(25000); // 25kHz typical for PWM fans
   analogWriteRange(255); // 8-bit resolution
+
+  analogWrite(pwm_signal, 5);
+  analogWrite(yellow, 0);
+  analogWrite(red, 0);
+  analogWrite(green, 0);
+
+
   
-  // 1 pulse
-  server.on("/1", HTTP_GET, []() {
+  // 5 pulse
+  server.on("/5", HTTP_GET, []() {
     server.send(200, "text/html", getHTML());
-    analogWrite(pwm_signal, 1);
+    analogWrite(pwm_signal, 5);
     analogWrite(green, 50);
     analogWrite(yellow, 0);
     analogWrite(red, 0);
     Serial.println("1_pulse");
   });
 
-  // 50 pulse
-  server.on("/50", HTTP_GET, []() {
-    server.send(200, "text/html", getHTML());
-    analogWrite(pwm_signal, 50);
-    analogWrite(yellow, 220);
-    analogWrite(green, 0);
-    analogWrite(red, 0);
-    Serial.println("50_pulse");
-  });
-
-  // 80 pulse
-  server.on("/80", HTTP_GET, []() {
-    server.send(200, "text/html", getHTML());
-    analogWrite(pwm_signal, 80);
-    analogWrite(yellow, 220);
-    analogWrite(red, 0);
-    analogWrite(green, 0);
-    Serial.println("80pulse");
-  });
-
   // 140 pulse
   server.on("/140", HTTP_GET, []() {
     server.send(200, "text/html", getHTML());
-    analogWrite(pwm_signal, 70);
-    analogWrite(red, 50);
-    analogWrite(yellow, 0);
+    analogWrite(pwm_signal, 140);
     analogWrite(green, 0);
-    Serial.println("140_pulse");
-  });
-
-  
-  // 180 pulse
-  server.on("/180", HTTP_GET, []() {
-    server.send(200, "text/html", getHTML());
-    analogWrite(pwm_signal, 180);
-    analogWrite(red, 100);
-    analogWrite(yellow, 0);
-    analogWrite(green, 0);
-    Serial.println("180_pulse");
-  });
-
-  // 220 pulse
-  server.on("/220", HTTP_GET, []() {
-    server.send(200, "text/html", getHTML());
-    analogWrite(pwm_signal, 220);
-    analogWrite(red, 150);
-    analogWrite(yellow, 0);
-    analogWrite(green, 0);
-    Serial.println("220_pulse");
+    analogWrite(yellow, 200);
+    analogWrite(red, 0);
+    Serial.println("25_pulse");
   });
 
   // 245 pulse
   server.on("/245", HTTP_GET, []() {
     server.send(200, "text/html", getHTML());
     analogWrite(pwm_signal, 245);
-    analogWrite(red, 200);
     analogWrite(yellow, 0);
     analogWrite(green, 0);
-    Serial.println("245_pulse");
+    analogWrite(red, 200);
+    Serial.println("50_pulse");
   });
+
+
 
   // Start the server
   server.begin();
 }
 
-String getHTML() {
+  String getHTML() {
   String ptr = "<!DOCTYPE html> <html>\n";
   return ptr;
-}
+  }
+
 
 void loop() {
     server.handleClient();
